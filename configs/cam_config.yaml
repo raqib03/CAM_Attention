@@ -1,0 +1,17 @@
+dataset:
+  name: FashionMNIST
+  root_dir: ../data/fashion_mnist
+  input_shape: [1, 28, 28]         # Grayscale images
+training:
+  learning_rate: 0.001
+  batch_size: 1024
+  num_epochs: 20
+  optimizer: Adam
+evaluation:
+  metrics: [confusion_matrix, f1_score]
+device:
+  use_cuda: true                   # Enable GPU if available
+  seed: 42                         # For reproducibility
+outputs:
+  results_dir: ../outputs/cam_results
+  attention_maps_dir: ../outputs/cam_results/attention_maps
